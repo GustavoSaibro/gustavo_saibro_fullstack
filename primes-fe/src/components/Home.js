@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Col, Container, Row } from "reactstrap";
-import StudentList from "./PrimeList";
-import NewStudentModal from "./NewPrimeModal";
+import PrimeList from "./PrimeList";
+import NewPrimeModal from "./NewPrimeModal";
 
 import axios from "axios";
 
