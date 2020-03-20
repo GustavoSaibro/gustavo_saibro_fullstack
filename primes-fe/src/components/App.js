@@ -1,16 +1,15 @@
-import React, { Component, Fragment } from "react";
-import Header from "./components/Header";
-import Home from "./components/Home";
+// import React, { Component, Fragment } from "react";
+// import Header from "./components/Header";
+// import Home from "./components/Home";
 
-class App extends Component {
-  render() {
-    return (
-      <Fragment>
-        <Header />
-        <Home />
-      </Fragment>
-    );
-  }
-}
+// class App extends Component {
+//   render() {
+//     return (
+//       <Fragment>
+//         <Home />
+//       </Fragment>
+//     );
+//   }
+// }
 
-export default App;
+// export default App;

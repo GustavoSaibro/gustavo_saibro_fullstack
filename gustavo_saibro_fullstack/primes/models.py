@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 
 class Prime(models.Model):
-	number = models.CharField(max_length=200)
+	number = models.IntegerField()
 
 
 	def __str__(self):

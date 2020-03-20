@@ -8,7 +8,7 @@ import { API_URL } from "../constants";
 class NewPrimeForm extends React.Component {
   state = {
     pk: 0,
-    number: "",    
+    number: ""  
   };
 
   componentDidMount() {
@@ -46,12 +46,12 @@ class NewPrimeForm extends React.Component {
     return (
       <Form onSubmit={this.props.prime ? this.editPrime : this.createPrime}>
         <FormGroup>
-          <Label for="number">number:</Label>
+          <Label for='number'>number:</Label>
           <Input
-            type="text"
+            type="number"
             number="number"
             onChange={this.onChange}
-            value={this.defaultIfEmpty(this.state.number)}
+            // value={this.defaultIfEmpty(this.state.number)}
           />
         </FormGroup>
         <Button>Send</Button>

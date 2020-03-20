@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
 import { Button, Modal, ModalHeader, ModalBody } from "reactstrap";
-import NewStudentForm from "./NewPrimeForm";
+import NewPrimeForm from "./NewPrimeForm";
 
 class NewPrimeModal extends Component {
   state = {
@@ -40,10 +40,10 @@ class NewPrimeModal extends Component {
           <ModalHeader toggle={this.toggle}>{title}</ModalHeader>
 
           <ModalBody>
-            <NewStudentForm
+            <NewPrimeForm
               resetState={this.props.resetState}
               toggle={this.toggle}
-              student={this.props.student}
+              prime={this.props.prime}
             />
           </ModalBody>
         </Modal>

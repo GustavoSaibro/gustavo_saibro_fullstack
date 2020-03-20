@@ -9,7 +9,7 @@ import { API_URL } from "../constants";
 
 class Home extends Component {
   state = {
-    students: []
+    primes: []
   };
 
   componentDidMount() {
