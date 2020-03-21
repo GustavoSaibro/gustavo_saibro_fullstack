@@ -6,4 +6,4 @@ class PrimeSerializer(serializers.ModelSerializer):
 
 	class Meta:
 		model = Prime
-		fields = ['number']
+		fields = '__all__'

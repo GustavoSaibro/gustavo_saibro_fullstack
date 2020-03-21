@@ -7,14 +7,16 @@ import { API_URL } from "../constants";
 
 class NewPrimeForm extends React.Component {
   state = {
-    pk: 0,
+    id: 0,
     number: ""  
   };
 
+
+
   componentDidMount() {
     if (this.props.prime) {
-      const { pk, number} = this.props.prime;
-      this.setState({ pk, number});
+      const { id, number} = this.props.prime;
+      this.setState({ id, number});
     }
   }
 
@@ -32,7 +34,7 @@ class NewPrimeForm extends React.Component {
 
   editPrime = e => {
     e.preventDefault();
-    axios.put(API_URL + this.state.pk, this.state).then(() => {
+    axios.put(API_URL + this.state.id, this.state).then(() => {
       this.props.resetState();
       this.props.toggle();
     });
