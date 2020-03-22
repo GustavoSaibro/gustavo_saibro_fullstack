@@ -6,22 +6,24 @@ import axios from "axios";
 import { API_URL } from "../constants";
 
 class NewPrimeForm extends React.Component {
-  state = {
-    id: 0,
-    number: ""  
-  };
-
+  constructor(props) {
+    super(props);
+    this.state = {
+      id:0,
+      "number": "" 
+    };
+}
 
 
   componentDidMount() {
     if (this.props.prime) {
-      const { id, number} = this.props.prime;
+      const { id, number } = this.props.prime;
       this.setState({ id, number});
     }
   }
 
   onChange = e => {
-    this.setState({ [e.target.number]: e.target.value });
+    this.setState({ number: e.target.value });
   };
 
   createPrime = e => {
@@ -48,7 +50,7 @@ class NewPrimeForm extends React.Component {
     return (
       <Form onSubmit={this.props.prime ? this.editPrime : this.createPrime}>
         <FormGroup>
-          <Label for='number'>number:</Label>
+          <Label for="number">number:</Label>
           <Input
             type="number"
             number="number"
