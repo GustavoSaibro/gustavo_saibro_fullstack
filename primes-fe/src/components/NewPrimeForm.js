@@ -48,11 +48,11 @@ class NewPrimeForm extends React.Component {
 
   render() {
     return (
-      <Form onSubmit={this.props.prime ? this.editPrime : this.createPrime}>
+      <Form onSubmit={ this.createPrime}>
         <FormGroup>
           <Label for="number">number:</Label>
           <Input
-            type="number"
+            type="number" 
             number="number"
             onChange={this.onChange}
             // value={this.defaultIfEmpty(this.state.number)}

@@ -6,18 +6,29 @@ import axios from "axios";
 import { API_URL } from "../constants";
 
 class ConfirmRemovalModal extends Component {
-  state = {
-    modal: false
-  };
-
+  constructor(props){
+    super(props);
+    this.state = {
+      // id : 0,
+      // "number": "",
+      modal: false
+    };
+  }
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     id:0,
+  //     "number": "" 
+  //   };
+  // }
   toggle = () => {
     this.setState(previous => ({
       modal: !previous.modal
     }));
   };
 
-  deletePrime = pk => {
-    axios.delete(API_URL + pk).then(() => {
+  deletePrime = e => {
+    axios.delete(API_URL + this.state.id).then(() => {
       this.props.resetState();
       this.toggle();
     });

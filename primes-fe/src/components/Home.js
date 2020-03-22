@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Col, Container, Row } from "reactstrap";
 import PrimeList from "./PrimeList";
 import NewPrimeModal from "./NewPrimeModal";
+import ShowPrimeModal from "./ShowPrimeModal";
 
 import axios from "axios";
 
@@ -11,6 +12,8 @@ class Home extends Component {
   state = {
     primes: []
   };
+
+
 
   componentDidMount() {
     this.resetState();
@@ -22,6 +25,14 @@ class Home extends Component {
 
   resetState = () => {
     this.getPrimes();
+  };
+
+  editPrime = e => {
+    e.preventDefault();
+    axios.put(API_URL + this.state.id, this.state).then(() => {
+      this.props.resetState();
+      this.props.toggle();
+    });
   };
 
   render() {
@@ -37,7 +48,7 @@ class Home extends Component {
         </Row>
         <Row>
           <Col>
-            <NewPrimeModal create={true} resetState={this.resetState} />
+          <ShowPrimeModal create={true} resetState={this.resetState} />
           </Col>
         </Row>
       </Container>
