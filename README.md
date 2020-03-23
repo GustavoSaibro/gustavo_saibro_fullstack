@@ -34,9 +34,9 @@ Após a instalação do python, utlize os comandos abaixo para a instalação da
 ### Executando o programa
 
 * Navegue até a diretório gustavo_saibro_fullstack por meio de um terminal/ prompt, e execute o seguinte comando:  
-  ```
-  python3.7 manage.py runserver
-  ```
+```
+python3.7 manage.py runserver
+```
   
 * Navegue até a diretório primes-fe por meio de um terminal/ prompt, e execute o seguinte comando:
 ```
