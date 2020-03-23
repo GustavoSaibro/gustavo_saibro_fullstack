@@ -49,7 +49,7 @@ npm start
 Contribuidores do projeto:
 
 Gustavo Saibro  
-ex. [@GustavoSaibro](https://github.com/GustavoSaibro)
+[@GustavoSaibro](https://github.com/GustavoSaibro)
 
 ## Version History
 
