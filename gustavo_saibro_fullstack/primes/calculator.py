@@ -13,5 +13,5 @@ class Calculator:
 	# 	self.number = number
 	@staticmethod
 	def create_divisor(number):
-		prime = Prime.objects.get(number='number')
-		Divisor.objects.create(number = prime,divisor=divisors(number),is_prime=isprime(number))		
+		# prime = Prime.objects.get(number='number')
+		Divisor.objects.create(divisor=divisors(number),is_prime=isprime(number))		

@@ -18,13 +18,14 @@ def primes_list(request):
 
     elif request.method == 'POST':
         data2 = request.data.copy()
-        # calculator = Calculator()
+        calculator = Calculator()
         serializer = PrimeSerializer(data=request.data)
-        # number = int(data2.get('number'))
+        number = int(data2.get('number'))
+        print(number)
         # serializer2= DivisorSerializer(data=request.data)
+        calculator.create_divisor(number)
         if serializer.is_valid():
             serializer.save()
-            # calculator.create_divisor(number)
             return Response(status=status.HTTP_201_CREATED)
             
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

@@ -9,7 +9,7 @@ class Prime(models.Model):
 		return self.number
 
 class Divisor(models.Model):
-	number = models.ForeignKey(Prime, on_delete=models.CASCADE)
+	number = models.CharField(max_length=200)	
 	divisor = models.CharField(max_length=200)
 	is_prime = models.CharField(max_length=10)
 
