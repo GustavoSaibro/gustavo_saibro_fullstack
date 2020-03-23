@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Col, Container, Row } from "reactstrap";
 import PrimeList from "./PrimeList";
 import NewPrimeModal from "./NewPrimeModal";
-import ShowPrimeModal from "./ShowPrimeModal";
+// import ShowPrimeModal from "./ShowPrimeModal";
 
 import axios from "axios";
 
@@ -48,7 +48,7 @@ class Home extends Component {
         </Row>
         <Row>
           <Col>
-          <ShowPrimeModal create={true} resetState={this.resetState} />
+          <NewPrimeModal create={true} resetState={this.resetState} />
           </Col>
         </Row>
       </Container>

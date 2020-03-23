@@ -19,6 +19,21 @@ class NewPrimeModal extends Component {
     var title = "Showing Prime Number";
     var button = <Button onClick={this.toggle}>Show</Button>;
 
+    if (create) {
+      title = "Creating New Prime";
+
+      button = (
+        <Button
+          color="primary"
+          className="float-right"
+          onClick={this.toggle}
+          style={{ minWidth: "200px" }}
+        >
+          Create New
+        </Button>
+      );
+    }
+
     return (
 
       <Fragment>
