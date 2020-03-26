@@ -11,7 +11,7 @@ class Prime(models.Model):
 class Divisor(models.Model):
 	number = models.CharField(max_length=200)	
 	divisor = models.CharField(max_length=200)
-	is_prime = models.CharField(max_length=10)
+	is_prime = models.CharField(max_length=200)
 
 	def __str__(self):
 		return self.number

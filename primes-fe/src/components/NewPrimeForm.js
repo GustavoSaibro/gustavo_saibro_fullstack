@@ -9,7 +9,7 @@ class NewPrimeForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      id:0,
+      // id:0,
       "number": "" 
     };
 }
@@ -17,8 +17,8 @@ class NewPrimeForm extends React.Component {
 
   componentDidMount() {
     if (this.props.prime) {
-      const { id, number } = this.props.prime;
-      this.setState({ id, number});
+      const { number } = this.props.prime;
+      this.setState({ number});
     }
   }
 
@@ -34,13 +34,13 @@ class NewPrimeForm extends React.Component {
     });
   };
 
-  editPrime = e => {
-    e.preventDefault();
-    axios.put(API_URL + this.state.id, this.state).then(() => {
-      this.props.resetState();
-      this.props.toggle();
-    });
-  };
+  // editPrime = e => {
+  //   e.preventDefault();
+  //   axios.put(API_URL + this.state.number, this.state).then(() => {
+  //     this.props.resetState();
+  //     this.props.toggle();
+  //   });
+  // };
 
   defaultIfEmpty = value => {
     return value === "" ? "" : value;

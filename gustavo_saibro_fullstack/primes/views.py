@@ -21,7 +21,7 @@ def primes_list(request):
         calculator = Calculator()
         serializer = PrimeSerializer(data=request.data)
         number = int(data2.get('number'))
-        print(number)
+        # print(number)
         # serializer2= DivisorSerializer(data=request.data)
         calculator.create_divisor(number)
         if serializer.is_valid():
@@ -30,19 +30,19 @@ def primes_list(request):
             
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-@api_view(['PUT', 'DELETE'])
+@api_view(['GET', 'DELETE'])
 def primes_detail(request, pk):
     try:
-        prime = Prime.objects.get(pk=pk)
-    except Prime.DoesNotExist:
+        prime = Divisor.objects.get(pk=pk)
+    except Divisor.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
 
-    if request.method == 'PUT':
-        serializer = PrimeSerializer(prime, data=request.data,context={'request': request})
-        if serializer.is_valid():
-            serializer.save()
-            return Response(status=status.HTTP_204_NO_CONTENT)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    if request.method == 'GET':        
+        data = Divisor.objects.get(pk=pk)
+
+        serializer = DivisorSerializer(data, context={'request': request})        
+
+        return Response(serializer.data)        
 
     elif request.method == 'DELETE':
         prime.delete()

@@ -9,8 +9,8 @@ class ConfirmRemovalModal extends Component {
   constructor(props){
     super(props);
     this.state = {
-      // id : 0,
-      // "number": "",
+      id : 0,
+      "number": "",
       modal: false
     };
   }

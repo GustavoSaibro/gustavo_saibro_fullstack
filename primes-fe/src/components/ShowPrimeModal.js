@@ -1,8 +1,9 @@
 import React, { Component, Fragment } from "react";
 import { Button, Modal, ModalHeader, ModalBody } from "reactstrap";
-import NewPrimeForm from "./NewPrimeForm";
 
-class NewPrimeModal extends Component {
+import ShowDivisorModal from "./ShowDivisorModal";
+
+class ShowPrimeModal extends Component {
   state = {
     modal: false
   };
@@ -13,18 +14,19 @@ class NewPrimeModal extends Component {
     }));
   };
 
+
   render() {
     const create = this.props.create;
 
-    var title = "Creating New Prime";
+    var title = "inspect prime divisors";
     var button = (
         <Button
-          color="primary"
+          color="secondary"
           className="float-right"
           onClick={this.toggle}
-          style={{ minWidth: "200px" }}
+          // style={{ minWidth: "50px" }}
         >
-          Create New
+          Show Divisors
         </Button>
       );    
 
@@ -34,13 +36,8 @@ class NewPrimeModal extends Component {
         {button}
         <Modal isOpen={this.state.modal} toggle={this.toggle}>
           <ModalHeader toggle={this.toggle}>{title}</ModalHeader>
-
-          <ModalBody>
-            <NewPrimeForm
-              resetState={this.props.resetState}
-              toggle={this.toggle}
-              prime={this.props.prime}
-            />
+          <ShowDivisorModal/>
+          <ModalBody>            
           </ModalBody>
         </Modal>
       </Fragment>
@@ -48,4 +45,4 @@ class NewPrimeModal extends Component {
   }
 }
 
-export default NewPrimeModal;
+export default ShowPrimeModal;

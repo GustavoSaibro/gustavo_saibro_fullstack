@@ -14,4 +14,11 @@ class Calculator:
 	@staticmethod
 	def create_divisor(number):
 		# prime = Prime.objects.get(number='number')
-		Divisor.objects.create(divisor=divisors(number),is_prime=isprime(number))		
+		divisor = divisors(number)
+		is_prime = ""
+		# print(isprime(number))
+		if isprime(number):
+			is_prime = "É um número primo!"
+		else:
+			is_prime = "Não é um número primo..."
+		Divisor.objects.create(number=number,divisor=divisor,is_prime=is_prime)		

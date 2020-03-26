@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { Table } from "reactstrap";
-import NewPrimeModal from "./NewPrimeModal";
+// import NewPrimeModal from "./NewPrimeModal";
+import ShowPrimeModal from "./ShowPrimeModal";
 
-import ConfirmRemovalModal from "./ConfirmRemovalModal";
+// import ConfirmRemovalModal from "./ConfirmRemovalModal";
 
 class PrimeList extends Component {
   render() {
@@ -24,19 +25,14 @@ class PrimeList extends Component {
             </tr>
           ) : (
             primes.map(prime => (
-              <tr key={prime.pk}>
+              <tr key={prime.id}>
                 <td>{prime.number}</td>                
                 <td align="center">
-                  <NewPrimeModal
-                    create={false}
+                  <ShowPrimeModal
+                    // create={false}
                     prime={prime}
                     resetState={this.props.resetState}
-                  />
-                  &nbsp;&nbsp;
-                  <ConfirmRemovalModal
-                    pk={prime.pk}
-                    resetState={this.props.resetState}
-                  />
+                  />                  
                 </td>
               </tr>
             ))

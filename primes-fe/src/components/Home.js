@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Col, Container, Row } from "reactstrap";
 import PrimeList from "./PrimeList";
 import NewPrimeModal from "./NewPrimeModal";
-// import ShowPrimeModal from "./ShowPrimeModal";
+import ShowPrimeModal from "./ShowPrimeModal";
 
 import axios from "axios";
 
@@ -10,7 +10,8 @@ import { API_URL } from "../constants";
 
 class Home extends Component {
   state = {
-    primes: []
+    primes: [],
+    divisors: []
   };
 
 
@@ -48,7 +49,7 @@ class Home extends Component {
         </Row>
         <Row>
           <Col>
-          <NewPrimeModal create={true} resetState={this.resetState} />
+          <NewPrimeModal resetState={this.resetState} />
           </Col>
         </Row>
       </Container>
